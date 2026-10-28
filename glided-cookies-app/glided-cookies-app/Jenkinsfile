@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -15,11 +16,11 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo '=== Stage 2: Installing Node.js & Vite Dependencies ==='
-                dir('frontend') {
+                echo '=== Stage 2: Installing Dependencies ==='
+                dir('glided-cookies-app/glided-cookies-app/frontend') {
                     bat 'npm install --no-audit --no-fund'
                 }
-                dir('backend') {
+                dir('glided-cookies-app/glided-cookies-app/backend') {
                     bat 'npm install --no-audit --no-fund'
                 }
             }
@@ -27,8 +28,8 @@ pipeline {
 
         stage('Lint & Syntax Check') {
             steps {
-                echo '=== Stage 3: Verifying code syntax and integrity ==='
-                dir('backend') {
+                echo '=== Stage 3: Checking Backend Syntax ==='
+                dir('glided-cookies-app/glided-cookies-app/backend') {
                     bat 'node --check server.js'
                 }
             }
@@ -36,8 +37,8 @@ pipeline {
 
         stage('Production Build') {
             steps {
-                echo '=== Stage 4: Compiling frontend with Vite ==='
-                dir('frontend') {
+                echo '=== Stage 4: Building Frontend ==='
+                dir('glided-cookies-app/glided-cookies-app/frontend') {
                     bat 'npm run build'
                 }
             }
@@ -45,18 +46,18 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo '=== Stage 5: Artifacts Ready for Deployment ==='
-                echo 'Build artifacts successfully verified in frontend/dist/'
+                echo '=== Stage 5: Deployment Preparation ==='
+                echo 'Frontend build artifacts verified in frontend/dist/'
             }
         }
     }
 
     post {
         success {
-            echo '✅ Pipeline finished successfully!'
+            echo 'Pipeline finished successfully!'
         }
         failure {
-            echo '❌ Pipeline failed.'
+            echo 'Pipeline failed.'
         }
     }
 }
