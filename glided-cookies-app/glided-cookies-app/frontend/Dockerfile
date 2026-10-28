@@ -2,13 +2,13 @@ FROM node:18-alpine AS build
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
-RUN npm install --include=dev
+RUN npm ci --include=dev
 
 COPY . .
 
-RUN npm run build
+RUN ./node_modules/.bin/vite build
 
 FROM nginx:alpine
 
