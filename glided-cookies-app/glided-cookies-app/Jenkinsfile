@@ -1,10 +1,5 @@
-
 pipeline {
     agent any
-
-    environment {
-        NODE_ENV = 'production'
-    }
 
     stages {
         stage('Checkout') {
@@ -17,9 +12,12 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo '=== Stage 2: Installing Dependencies ==='
+
                 dir('glided-cookies-app/glided-cookies-app/frontend') {
-                    bat 'npm install --no-audit --no-fund'
+                    bat 'npm install --include=dev --no-audit --no-fund'
+                    bat 'npm exec vite -- --version'
                 }
+
                 dir('glided-cookies-app/glided-cookies-app/backend') {
                     bat 'npm install --no-audit --no-fund'
                 }
@@ -29,6 +27,7 @@ pipeline {
         stage('Lint & Syntax Check') {
             steps {
                 echo '=== Stage 3: Checking Backend Syntax ==='
+
                 dir('glided-cookies-app/glided-cookies-app/backend') {
                     bat 'node --check server.js'
                 }
@@ -38,6 +37,7 @@ pipeline {
         stage('Production Build') {
             steps {
                 echo '=== Stage 4: Building Frontend ==='
+
                 dir('glided-cookies-app/glided-cookies-app/frontend') {
                     bat 'npm run build'
                 }
@@ -56,6 +56,7 @@ pipeline {
         success {
             echo 'Pipeline finished successfully!'
         }
+
         failure {
             echo 'Pipeline failed.'
         }
