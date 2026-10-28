@@ -4,18 +4,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo '=== Stage 1: Checking out repository ==='
+                echo '=== Stage 1: Checkout GitHub ==='
                 checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                echo '=== Stage 2: Installing Dependencies ==='
+                echo '=== Stage 2: Install Dependencies ==='
 
                 dir('glided-cookies-app/glided-cookies-app/frontend') {
                     bat 'npm install --include=dev --no-audit --no-fund'
-                    bat 'npm exec vite -- --version'
                 }
 
                 dir('glided-cookies-app/glided-cookies-app/backend') {
@@ -24,9 +23,9 @@ pipeline {
             }
         }
 
-        stage('Lint & Syntax Check') {
+        stage('Syntax Check') {
             steps {
-                echo '=== Stage 3: Checking Backend Syntax ==='
+                echo '=== Stage 3: Check Backend Syntax ==='
 
                 dir('glided-cookies-app/glided-cookies-app/backend') {
                     bat 'node --check server.js'
@@ -36,7 +35,7 @@ pipeline {
 
         stage('Production Build') {
             steps {
-                echo '=== Stage 4: Building Frontend ==='
+                echo '=== Stage 4: Build Frontend ==='
 
                 dir('glided-cookies-app/glided-cookies-app/frontend') {
                     bat 'npm run build'
@@ -44,10 +43,14 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Docker Deploy') {
             steps {
-                echo '=== Stage 5: Deployment Preparation ==='
-                echo 'Frontend build artifacts verified in frontend/dist/'
+                echo '=== Stage 5: Build and Deploy with Docker ==='
+
+                dir('glided-cookies-app/glided-cookies-app') {
+                    bat 'docker compose up -d --build'
+                    bat 'docker compose ps'
+                }
             }
         }
     }
@@ -58,7 +61,7 @@ pipeline {
         }
 
         failure {
-            echo 'Pipeline failed.'
+            echo 'Pipeline failed. Check Console Output.'
         }
     }
 }
