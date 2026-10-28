@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-cream-50 text-espresso-800 font-sans;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E8821A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  h1,h2,h3,h4,h5,h6 { @apply font-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3
+           bg-espresso-700 text-cream-50 font-sans font-semibold
+           tracking-wider text-sm uppercase
+           hover:bg-espresso-600 active:scale-95
+           transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3
+           border-2 border-espresso-700 text-espresso-700 font-sans font-semibold
+           tracking-wider text-sm uppercase
+           hover:bg-espresso-700 hover:text-cream-50
+           active:scale-95 transition-all duration-300;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3
+           bg-gradient-to-r from-gold-500 to-gold-600 text-white font-sans font-bold
+           tracking-wider text-sm uppercase
+           hover:from-gold-600 hover:to-gold-700
+           active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           text-espresso-600 font-sans text-sm
+           hover:text-espresso-800 transition-colors;
+  }
+  .section-label {
+    @apply text-gold-500 font-sans text-xs tracking-[0.35em] uppercase font-bold;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-cream-200 bg-white text-espresso-800
+           font-sans text-sm placeholder-cream-400
+           focus:outline-none focus:border-gold-500 transition-colors rounded-sm;
+  }
+  .label-xs {
+    @apply block font-sans text-xs uppercase tracking-widest text-espresso-500 mb-2 font-semibold;
+  }
+  .card {
+    @apply bg-white shadow-sm hover:shadow-xl transition-shadow duration-300;
+  }
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/50 shadow-xl;
+  }
+}
+
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #FFF8F2; }
+::-webkit-scrollbar-thumb  { background: linear-gradient(#E8821A, #C96A0E); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #C96A0E; }

@@ -1,0 +1,170 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@cremencrumbs.com",
+      "password_hash": "$2a$10$4DDuO.ei9TJzVGkj3ocDLe0QpABcHaQlUVDQ2oRNJ6Aob8w0ZvAMK",
+      "role": "admin",
+      "created_at": "2026-10-27T16:16:18.854Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sea Salt Toffee",
+      "category": "cookies",
+      "subtitle": "Maldon salt · brown butter",
+      "price": 549,
+      "original_price": null,
+      "badge": "Bestseller",
+      "active": true,
+      "description": "Our signature brown butter cookie crowned with hand-harvested Maldon sea salt and ribbons of house-made toffee.",
+      "details": [
+        "Brown butter base",
+        "Maldon sea salt finish",
+        "House-made toffee ribbons",
+        "6 cookies per box"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.782Z"
+    },
+    {
+      "id": 2,
+      "name": "Midnight Espresso Brownie",
+      "category": "brownies",
+      "subtitle": "Single-origin roast · walnut",
+      "price": 649,
+      "original_price": null,
+      "badge": "Fan favourite",
+      "active": true,
+      "description": "Fudge brownie enriched with single-origin espresso and studded with toasted California walnuts.",
+      "details": [
+        "72% single-origin cacao",
+        "Arabica espresso extract",
+        "Toasted California walnuts",
+        "8 brownies per box"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 3,
+      "name": "Zesty Poppyseed",
+      "category": "cookies",
+      "subtitle": "Amalfi lemon · vanilla glaze",
+      "price": 499,
+      "original_price": null,
+      "badge": "Seasonal",
+      "active": true,
+      "description": "Bright Amalfi lemon zest folded into a cloud-light dough, crowned with vanilla bean glaze.",
+      "details": [
+        "Amalfi lemon zest",
+        "Madagascar vanilla glaze",
+        "Poppy seeds",
+        "6 cookies per box"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 4,
+      "name": "The Cookie Box",
+      "category": "gift",
+      "subtitle": "12 signature flavors",
+      "price": 1999,
+      "original_price": 2400,
+      "badge": "Gift pick",
+      "active": true,
+      "description": "Twelve cookies spanning our entire repertoire. Presented in our signature kraft box with a handwritten note.",
+      "details": [
+        "12 cookies, 6 varieties",
+        "Handwritten note included",
+        "Signature kraft box",
+        "Ships same day"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1512909006721-3d6018887383?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 5,
+      "name": "Fudge Brownie Box",
+      "category": "brownies",
+      "subtitle": "Box of 8, triple-chocolate",
+      "price": 1199,
+      "original_price": null,
+      "badge": null,
+      "active": true,
+      "description": "Eight fudge brownies layered with milk, dark, and white chocolate in a single velvet bite.",
+      "details": [
+        "Triple chocolate layers",
+        "Glossy ganache top",
+        "Box of 8",
+        "No preservatives"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 6,
+      "name": "Heritage Gift Hamper",
+      "category": "gift",
+      "subtitle": "Silk ribbon · handwritten note",
+      "price": 3499,
+      "original_price": 4199,
+      "badge": "Limited",
+      "active": true,
+      "description": "Our most treasured offering — 24 cookies, 8 brownies, vanilla fudge, and loose-leaf tea wrapped in silk ribbon.",
+      "details": [
+        "24 cookies + 8 brownies",
+        "House-made vanilla fudge",
+        "Loose-leaf tea tin",
+        "Silk ribbon & linen wrap"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1607920592519-bab2c90f5494?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 7,
+      "name": "Lavender Shortbread",
+      "category": "cookies",
+      "subtitle": "Provence lavender · cultured butter",
+      "price": 499,
+      "original_price": null,
+      "badge": null,
+      "active": true,
+      "description": "Crumbly, buttery shortbread infused with culinary Provence lavender.",
+      "details": [
+        "Culinary Provence lavender",
+        "Cultured butter",
+        "Organic cane sugar",
+        "8 fingers per box"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1519915028121-7d3463d5b1ff?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    },
+    {
+      "id": 8,
+      "name": "Autumn Praline Box",
+      "category": "seasonal",
+      "subtitle": "Pecan praline · maple · autumn spice",
+      "price": 1799,
+      "original_price": 2099,
+      "badge": "15% off",
+      "active": true,
+      "description": "A seasonal celebration — pecan praline cookies, maple-glazed blondies, and spiced shortbread.",
+      "details": [
+        "Pecan praline cookies",
+        "Maple-glazed blondies",
+        "Spiced shortbread",
+        "15 pieces total"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=700&q=90",
+      "created_at": "2026-10-27T16:16:18.783Z"
+    }
+  ],
+  "cart_items": [],
+  "wishlist_items": [],
+  "orders": [],
+  "order_items": []
+}

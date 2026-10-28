@@ -1,0 +1,56 @@
+name: CI / Build Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-frontend:
+    name: Build & Test Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: glided-cookies-app/glided-cookies-app/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd glided-cookies-app/glided-cookies-app/frontend
+          npm ci
+
+      - name: Build frontend
+        run: |
+          cd glided-cookies-app/glided-cookies-app/frontend
+          npm run build
+
+  verify-backend:
+    name: Verify Backend Dependencies & Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: glided-cookies-app/glided-cookies-app/backend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd glided-cookies-app/glided-cookies-app/backend
+          npm ci
+
+      - name: Test backend entry syntax
+        run: |
+          cd glided-cookies-app/glided-cookies-app/backend
+          node --check server.js
