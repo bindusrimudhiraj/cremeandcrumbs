@@ -48,11 +48,11 @@ pipeline {
                 echo '=== Stage 5: Build and Deploy with Docker ==='
 
                 dir('glided-cookies-app/glided-cookies-app') {
-                    bat 'cmd /c ""C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose version"'
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" version'
 
-                    bat 'cmd /c ""C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose up -d --build"'
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" up -d --build'
 
-                    bat 'cmd /c ""C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose ps"'
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" ps'
                 }
             }
         }
