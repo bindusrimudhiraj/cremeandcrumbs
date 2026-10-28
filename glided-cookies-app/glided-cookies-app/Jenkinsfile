@@ -1,7 +1,9 @@
+
 pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 echo '=== Stage 1: Checkout GitHub ==='
@@ -48,8 +50,9 @@ pipeline {
                 echo '=== Stage 5: Build and Deploy with Docker ==='
 
                 dir('glided-cookies-app/glided-cookies-app') {
-                    bat 'docker compose up -d --build'
-                    bat 'docker compose ps'
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose up -d --build'
+
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose ps'
                 }
             }
         }
