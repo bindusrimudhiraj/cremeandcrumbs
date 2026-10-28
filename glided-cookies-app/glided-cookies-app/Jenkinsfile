@@ -56,11 +56,21 @@ pipeline {
                 }
             }
         }
+
+        stage('Deployment URL') {
+            steps {
+                echo '=== Stage 6: Deployment Details ==='
+                echo 'Deployment successful!'
+                echo 'Website URL: http://localhost'
+                echo 'Backend URL: http://localhost:5000'
+            }
+        }
     }
 
     post {
         success {
             echo 'Pipeline finished successfully!'
+            echo 'Open your website at: http://localhost'
         }
 
         failure {
