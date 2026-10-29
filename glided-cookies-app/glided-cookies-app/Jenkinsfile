@@ -50,7 +50,7 @@ pipeline {
                 dir('glided-cookies-app/glided-cookies-app') {
                     bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" version'
 
-                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" up -d --build
+                    bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" up -d --build'
 
                     bat '"C:\\Users\\manth\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" ps'
                 }
